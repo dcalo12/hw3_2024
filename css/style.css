@@ -108,66 +108,175 @@ footer{
 /* Step 1: Write selector/rule property to add an underline when
 links in the navigation are in the hover or focus state.*/
 
-nav li:hover{
+nav a:hover{
   text-decoration: solid underline;
 }
 
-nav li:focus{
+nav a:focus{
   text-decoration: solid underline;
 }
 
 /* Step 2a: Write selector/rule property to position the default position for the skip class element*/
 
-.skip{
-  background: #ECFF4D;
-  height: 30px;
-  left: -100%;
-  padding: 8px;
-  position: absolute;
-  transform: translateY(-100%);
+.skip a{
+  transform: translateY(-40px);
+  padding: 10px;
+  position: absolute; 
+  background-color: #000000;
+  color: #FFFFFF;
+  text-decoration: none;
   transition: transform 0.3s;
-}
+} 
 
 /* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
 
-.skip:focus{
-  transform: translateY(0%);
-  left: 0%;
-  /* position: absolute; */
-  /* border: 2px solid black; */
-}
+.skip a:focus{
+  transform: translateY(20px);
+} 
 
 /* Step 3: Write selector/rule property to style all elements when in focus*/
 
-body:focus{
-  border: 2px solid black;
+:focus{
+  border: 2px solid #000000;
 }
 
 /* Step 4: Write selector/rule property to style the container */
 
 .container{
+  display: grid;
   grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  /* margin: 15px; */
+  grid-gap: 15px;
+  place-items: center;
 }
 
 /* Step 5: Write selector/rule property to add the background image to the 
 first div in the grid  and place it in the grid. */
 
-.overview{
-  grid-column: 1 / 3;
+.container > :first-child{
+  grid-column: 1 / span 3;
+  background-image: url("/images/header.jpg"); 
+  background-attachment: fixed;      
+  background-position: center;  
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  height: 100%;      
+}
+
+/* header {
+  position: relative;
+} 
+
+.container-grid {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.container-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
   background-image: url("header.jpg");
 }
+
+/* .container-grid .overview {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: -1;
+} 
+
+.container-grid .overview h1 {
+  font-size: 50px;
+  line-height: 1;
+  margin-bottom: 20px;
+  z-index: -0;
+}
+
+.container-grid .overview p {
+  font-size: 24px;
+  padding: 0 20px;
+  z-index: -0;
+}
+*/
+
 
 /* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
  four rows in the grid. */
 
       /*This will be a lot of rules.... but be strategic and combine seletors*/
 
+.about, .method, .clients, .contact {
+  grid-column: 2 / span 3;
+  justify-content: center;
+  overflow: hidden;
+  height: 200px;
+  opacity: 0.75;
+}
 
+.about {
+  grid-row: 2;
+  z-index: 1;
+}
 
+.method {
+  grid-row: 3;
+  z-index: 1;
+}
+
+.clients {
+  grid-row: 4;
+  z-index: 1;
+}
+
+.contact {
+  grid-row: 5;
+  z-index: 1;
+}
+
+.about-image, .method-image, .clients-image, .contact-image {
+  grid-column: 1 / span 3;
+  max-height: 600px;
+  overflow: hidden;
+  display: block;
+  justify-content: center;
+}
+
+.about-image {
+  grid-row: 2;
+  z-index: -1;
+}
+
+.method-image {
+  grid-row: 3;
+  z-index: -1;
+}
+
+.clients-image {
+  grid-row: 4;
+  z-index: -1;
+}
+
+.contact-image {
+  grid-row: 5;
+  z-index: -1;
+}
 
  /* Step 8: Write the selector/rule property to style the .text-block class. */
 
-
+.text-block {
+  background-color: #FFFFFF;
+  border: 10px solid #000000;
+  padding: 30px;
+  left: 50%;
+  text-align: center;
+  grid-column: 2;
+}
 
 /* Add your media query here */
 
