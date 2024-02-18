@@ -146,9 +146,9 @@ nav a:focus{
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  /* margin: 15px; */
   grid-gap: 15px;
-  place-items: center;
+  align-items: center; 
+  justify-items: center;
 }
 
 /* Step 5: Write selector/rule property to add the background image to the 
@@ -163,47 +163,6 @@ first div in the grid  and place it in the grid. */
   background-size: cover; 
   height: 100%;      
 }
-
-/* header {
-  position: relative;
-} 
-
-.container-grid {
-  position: relative;
-  display: inline-block;
-  
-}
-
-.container-grid img {
-  width: 100%;
-  height: auto;
-  display: block;
-  background-image: url("header.jpg");
-}
-
-/* .container-grid .overview {
-  position: absolute;
-  top: 50%; 
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: -1;
-} 
-
-.container-grid .overview h1 {
-  font-size: 50px;
-  line-height: 1;
-  margin-bottom: 20px;
-  z-index: -0;
-}
-
-.container-grid .overview p {
-  font-size: 24px;
-  padding: 0 20px;
-  z-index: -0;
-}
-*/
 
 
 /* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
